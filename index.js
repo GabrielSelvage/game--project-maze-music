@@ -99,6 +99,7 @@ document.addEventListener('keydown', (e) => {
 
 function updateCanvas() {
 
+    
 }
 
 function loop() {

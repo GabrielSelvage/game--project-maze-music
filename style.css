@@ -1,0 +1,13 @@
+html{
+	margin: 0;
+	padding: 0;
+}
+#mazeCanvas{
+	margin-left: 150px;
+    /* display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center; */
+}

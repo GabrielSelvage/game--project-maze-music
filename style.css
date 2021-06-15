@@ -13,21 +13,21 @@ html, body{
 #mazeCanvas{
 	border: solid; 
     position: absolute;
-    top: 55%;
+    top: 53%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     background-color: white;
 }
 
-h1{
+.title{
     z-index: 100;
     display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: stretch;
-	align-content: stretch;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
     margin-top: 50px;
     color: #66d323;
     font-size: 68px;
@@ -62,32 +62,34 @@ h1{
 
   .notes{
     display: flex;
-	/* flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: flex-start;
-	align-content: stretch; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-around;
     border: solid red;
-    width: 100px;
+    width: 300px;
+    height: 400px;
+    float: right;
+    margin-right: 50px;
   }
 
   .notes img{
-      width: 30px;
+      width: 60px;
+      border-style: none;
   }
 
   .img1 {
-  display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
-	align-content: stretch;
+    margin-top: 10px;
   }
 
   
   #game-board {
-      float: left;
-      padding: 20px 0px;
+      background-image: url("./img/background_image.png");
+      background-size:contain;
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
   }
 
   .game-intro {
@@ -96,5 +98,27 @@ h1{
    height: 100%;
    width: 100%;
    background-repeat: no-repeat;
-   border: solid red;
+  }
+
+  .title1{
+    color: #66d323;
+    font-size: 32px;
+    padding: 0px;
+    padding-top: 20px;
+    margin: 0;
+    margin-left: 20px;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.7);
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
+  }
+
+  #scoreDiv{
+    float: right;
+    width: 100px;
+    text-align: right;
+    margin-right: 195px;
+    border: solid red;
+  }
+
+  .note{
+    border: solid red;
   }

@@ -2,8 +2,8 @@ class Note{
     constructor(x, y, imageSrc) {
         this.x = x;
         this.y = y;
-        this.width = 25;
-        this.height = 25;
+        this.width = 51;
+        this.height = 72;
         this.imageSrc = imageSrc;
     }
     draw(){

@@ -9,7 +9,7 @@ class Player {
     }
     draw(){
         const image = new Image();
-        image.src = "./img/dog_image.png";
+        image.src = "./img/cao_posicao.png";
         context.drawImage(image, this.x, this.y, this.width, this.height);
     }
 }

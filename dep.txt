@@ -1,0 +1,15 @@
+            const thisNotes = new Note();
+             const note = thisNotes.notes;
+             for (let i = 0; i < note.length; i++){
+                 if(square === 3){
+                    let note = {
+                         x: x + 12,
+                         y: y + 12
+                     }
+                     notes.push(note);
+
+                 }
+            }
+
+            //     let note = {};
+//     note.position;

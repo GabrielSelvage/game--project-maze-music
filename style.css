@@ -1,13 +1,100 @@
-html{
+html, body{
 	margin: 0;
 	padding: 0;
+    font-family: "AlloyInk";
+    height: 100%;
 }
+
+@font-face {
+    font-family: "AlloyInk";
+    src: url("./font/AlloyInk-nRLyO.ttf");
+}
+
 #mazeCanvas{
-	margin-left: 150px;
-    /* display: flex;
+	border: solid; 
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+h1{
+    z-index: 100;
+    display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
-	align-items: center;
-	align-content: center; */
+	align-items: stretch;
+	align-content: stretch;
+    margin-top: 50px;
+    color: #66d323;
+    font-size: 68px;
+    text-shadow: 4px 6px 8px rgba(0, 0, 0, 0.7);
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
 }
+  
+
+
+  #start-button{
+    font-size: 30px;
+    background-color: #ED5049;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    width: 320px;
+    height: 80px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    border-style: none;
+    font-family: "AlloyInk";
+    z-index: 0;
+  }
+
+  #start-button > p{
+    -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.7);
+  }
+
+
+  .notes{
+    display: flex;
+	/* flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: stretch; */
+    border: solid red;
+    width: 100px;
+  }
+
+  .notes img{
+      width: 30px;
+  }
+
+  .img1 {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+  }
+
+  
+  #game-board {
+      float: left;
+      padding: 20px 0px;
+  }
+
+  .game-intro {
+   background-image: url("./img/flow.png");
+   background-size:contain;
+   height: 100%;
+   width: 100%;
+   background-repeat: no-repeat;
+   border: solid red;
+  }

@@ -5,19 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body> 
-    <canvas id="mazeCanvas" class= "mazeCanvas" width="888" height="504" 
-    style="border: solid; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)"></canvas>
-    <script src="./Game.js" defer></script>
-    <script src="./maze.js" defer></script>
-    <script src="./Player.js" defer></script>
-    <script src="./Wall.js" defer></script>
-    <script src="./index.js" defer></script>
+
+    <div id = "game-intro" class="game-intro">
+        <br/>
+        <h1 class="title">Maze Music</h1>
+        <button id="start-button"><p>StartGame</p></button>
+        <div class="notes">
+            <img src="./img/note1.png" alt="" class="img1">
+            <img src="./img/note2.png" alt="" class="img2">
+            <img src="./img/note3.png" alt="" class="img3">
+            <img src="./img/note4.png" alt="" class="img4">
+            <img src="./img/note5.png" alt="" class="img5">
+            <img src="./img/note6.png" alt="" class="img6">
+            <img src="./img/note7.png" alt="" class="img7">
+            <img src="./img/note8.png" alt="" class="img8">
+
+        </div>
+
+      </div>
+    
+    <div id="game-board">
+        <h1 class="level1">Level 1</h1>
+        <div id="scoreDiv">Score: <span id="score">0</span></div>
+        <canvas id="mazeCanvas" class= "mazeCanvas" width="888" height="504"></canvas>
+        <script src="./Game.js" defer></script>
+        <script src="./maze.js" defer></script>
+        <script src="./Player.js" defer></script>
+        <script src="./Wall.js" defer></script>
+        <script src="./Note.js" defer></script>
+        <script src="./index.js" defer></script>
+    </div>
 </body>
 </html>

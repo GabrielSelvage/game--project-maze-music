@@ -56,10 +56,12 @@ function startGame() {
         }
     };
 
+    
     const randomNotePositionIndex = Math.floor(Math.random() * notesPossiblePositions.length);
     const randomNotePosition = notesPossiblePositions[randomNotePositionIndex];
     console.log(randomNotePosition);
     currentNote = new Note(randomNotePosition.x, randomNotePosition.y, "./img/note1.png"); 
+
     drawWalls();
     updateCanvas();
 }

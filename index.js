@@ -37,7 +37,6 @@ function startGame() {
     currentGame.player.draw();
     const thisMaze = new Maze();
     const maze = thisMaze.grid;
-    const thisNote = new Note();
     let notesPossiblePositions = [];
 
     for (let row = 0; row < maze.length; row++) {
@@ -49,8 +48,8 @@ function startGame() {
                 let wall = new Wall(x, y, squareSize, squareSize);
                 walls.push(wall);
             } else if (square === 3) {
-                let x = column * squareSize; //column é horizontal
-                let y = row * squareSize; //row é vertical
+                let x = column * squareSize - 12; //column é horizontal
+                let y = row * squareSize + 12; //row é vertical
                 notesPossiblePositions.push({ x, y })
             }
         }

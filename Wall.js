@@ -7,6 +7,7 @@ class Wall {
     }
 
     draw() {
+        context.fillStyle = "#ffb628";
         context.fillRect(this.x,this.y,squareSize,squareSize);
     }
 }

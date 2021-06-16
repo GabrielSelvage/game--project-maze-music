@@ -48,7 +48,7 @@ function startGame() {
                 let wall = new Wall(x, y, squareSize, squareSize);
                 walls.push(wall);
             } else if (square === 3) {
-                let x = column * squareSize - 12; //column é horizontal
+                let x = column * squareSize + 12; //column é horizontal
                 let y = row * squareSize + 12; //row é vertical
                 notesPossiblePositions.push({ x, y })
             }
@@ -65,6 +65,8 @@ function startGame() {
     updateCanvas();
 }
 
+
+//DETECT COLLISION
 function detectCollision(wall) {
     return !(currentGame.player.x > wall.x + wall.width ||
         currentGame.player.x + currentGame.player.width < wall.x ||
@@ -72,44 +74,47 @@ function detectCollision(wall) {
         currentGame.player.y + currentGame.player.height < wall.y)
 }
 
+//DETECT NOTE
+function detectCollisionNote(){
+    
+            if(currentGame.player.x > currentNote.x + currentNote.width ||
+            currentGame.player.x + currentGame.player.width < currentNote.x ||
+            currentGame.player.y > currentNote.y + currentNote.height ||
+            currentGame.player.y + currentGame.player.height < currentNote.y){
+                continue;
+            }else{
+                alert("note");
+            }
+}
+
+//HIT NOTE
+// function detectNote(){
+//         const fintNote = threeList.some((note) => {
+//         return player.detectCollisionNote(note) === true;
+//     });
+//         if(fintNote) {
+//         console.log('findNote');
+//     }
+// }
+
 function updateCanvas() {
-    // thisNote.draw();
     currentGame.player.draw();
     currentNote.draw();
     drawWalls();
-
-    //hitWall();
+    if(detectCollisionNote){
+        console.log("true")
+    };
     requestAnimationFrame(updateCanvas);
 }
 
-function newPosition() {
-    let position = notes[Math.floor(Math.random() * notes.length)];
-    console.log("position");
-    while (notes.position === position) {
-        position = notes[Math.floor(Math.random() * notes.length)];
-    }
-    return position;
-}
-
-function drawNotes() {
-    console.log("draw");
-    while (notes === 3) {
-        let newNote = Math.floor(Math.random() * notes.length);
-
-        if (notes.indexOf(newNote) == -1)
-            notes.push(newNote);
-    }
-    console.log("work");
-}
-
-function numero_aleatorio() {
-    while (numeros.length < 16) {
-        var aleatorio = Math.floor(Math.random() * 100);
-
-        if (numeros.indexOf(aleatorio) == -1)
-            numeros.push(aleatorio);
-    }
-}
+// function newPosition() {
+//     let position = notes[Math.floor(Math.random() * notes.length)];
+//     console.log("position");
+//     while (notes.position === position) {
+//         position = notes[Math.floor(Math.random() * notes.length)];
+//     }
+//     return position;
+// }
 
 
 function drawWalls() {
@@ -117,6 +122,8 @@ function drawWalls() {
         wall.draw();
     });
 }
+
+//HIT WALL
 function hitWall() {
     let hitObstacle = false;
     hitObstacle = walls.some((wall) => {

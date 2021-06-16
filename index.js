@@ -77,14 +77,14 @@ function detectCollision(wall) {
 //DETECT NOTE
 function detectCollisionNote(){
     
-            if(currentGame.player.x > currentNote.x + currentNote.width ||
+          /*   if(currentGame.player.x > currentNote.x + currentNote.width ||
             currentGame.player.x + currentGame.player.width < currentNote.x ||
             currentGame.player.y > currentNote.y + currentNote.height ||
             currentGame.player.y + currentGame.player.height < currentNote.y){
                 continue;
             }else{
                 alert("note");
-            }
+            } */
 }
 
 //HIT NOTE

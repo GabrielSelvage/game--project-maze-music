@@ -7,14 +7,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./hover-min.css">
+    <link rel="stylesheet" href="./hover.css">
 </head>
 <body> 
 
     <div id = "game-intro" class="game-intro">
         <br/>
         <h1 class="title animate__zoomInDown">Maze Music</h1>
-        <button id="start-button" class="button animate__zoomInDown animate__rubberBand"><p>StartGame</p></button>
+        <button id="start-button" class="button animate__zoomInDown animate__rubberBand"><p>Start Game</p></button>
         <div class="notes animate__zoomInDown">
             <img src="./img/noteOrange.png" alt="" class="img1">
             <img src="./img/notaRoxa.png" alt="" class="img2">
@@ -29,6 +30,15 @@
         <canvas id="mazeCanvas" class= "mazeCanvas" width="888" height="504"></canvas>
         <h1 class="title1">Maze Music</h1>
         <h2 class="level1">Level 1</h2>
+        <div id= "note">
+            <img src="./img/noteBlueS.png" alt="">
+            <img id="nextNote" />
+            <img id="nextNote2" />
+            <img id="nextNote3" />
+            <img id="nextNote4" />
+            <img id="nextNote5" />
+            <img id="nextNote6" />
+        </div>
         <script src="./Game.js" defer></script>
         <script src="./maze.js" defer></script>
         <script src="./Player.js" defer></script>
@@ -36,7 +46,29 @@
         <script src="./Note.js" defer></script>
         <script src="./index.js" defer></script>
         <br/>
-        <div id="scoreDiv">Score:<span id="score">0</span></div>
+        <audio src="./audio/trilha.mp3" loop></audio>
+        <div id="scoreDiv">Score:<span id="score"></span></div>
+        <div id="timerDiv">Time:<span id="timer"></span></div>
     </div>
+    <div id = "game-level1" class="game-intro">
+        <br/>
+        <h1 class="congratulations">Congratulations!</h1>
+        <button id="button-level1" class="button animate__zoomInDown animate__rubberBand" onclick="level2()" value=""><p>Level 2</p></button>
+        <img class= "noteLevel1" src="./img/noteBlueS.png" alt="">
+        <audio src="./audio/audio-nota-1.mp3" loop></audio>
+        <div class="notes animate__zoomInDown">
+            <img src="./img/noteOrange.png" alt="" class="img1">
+            <img src="./img/notaRoxa.png" alt="" class="img2">
+            <img src="./img/noteGreen.png" alt="" class="img3">
+            <img src="./img/noteYellow.png" alt="" class="img4">
+            <img src="./img/notePink.png" alt="" class="img5">
+        </div>
+    </div>
+
+    <div id = "game-final" class="game-intro">
+        <audio src="./audio/musica_final.mp3" loop></audio>
+        <audio src="./musica_final.mp3"></audio>
+    </div>
+
 </body>
 </html>

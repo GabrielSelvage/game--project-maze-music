@@ -3,7 +3,7 @@ class Note{
         this.x = x;
         this.y = y;
         this.width = 30;
-        this.height = 45;
+        this.height = 40;
         this.imageSrc = imageSrc;
     }
     draw(){

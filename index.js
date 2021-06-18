@@ -47,6 +47,8 @@ const fail = new Audio("./audio/audio-nota-1.mp3");
 const final = new Audio(".audio/musica_final.mp3");
 
 //const thisNote = new Note();
+
+const thisNote1 = new Note("./img/note1.png");
 const thisNote2 = new Note("./img/note2.png");
 const thisNote3 = new Note("./img/note3.png");
 const thisNote5 = new Note("./img/note5.png");
@@ -55,6 +57,8 @@ const thisNote4 = new Note("./img/note4.png");
 const thisNote7 = new Note("./img/note7.png");
 const thisNote8 = new Note("./img/note8.png");
 
+let arrayOfNotes = [thisNote1, thisNote2, thisNote3, thisNote5, thisNote6, thisNote4, thisNote7, thisNote8]
+let randomNote = arrayOfNotes[Math.floor(Math.random() * arrayOfNotes.length)]
 let threeList = [];
 let availableNotes = [];
 let currentNote;
@@ -74,7 +78,6 @@ function startGame() {
 
 function initMaze(level) {
     context.clearRect(0, 0, mazeCanvas.clientWidth, mazeCanvas.clientHeight);
-    debugger;
     const thisMaze = new Maze();
     let maze;
     if (level === 1) {
@@ -117,7 +120,21 @@ function initMaze(level) {
                 //  const randomNotePositionIndex = Math.floor(Math.random() * notesPossiblePositions.length);
                 // const randomNotePosition = notesPossiblePositions[randomNotePositionIndex];
                 // console.log(randomNotePosition);
-                availableNotes.push(new Note(x, y, "./img/note1.png"));
+                if (level === 1){
+                    availableNotes.push(new Note(x, y, "./img/note1.png"));
+                } else if(level === 2){
+                    availableNotes.push(new Note(x, y, "./img/note2.png"));
+                }else if(level === 3){
+                    availableNotes.push(new Note(x, y, "./img/note3.png"));
+                } else if(level === 4){
+                    availableNotes.push(new Note(x, y, "./img/note4.png"));
+                }else if(level === 5){
+                    availableNotes.push(new Note(x, y, "./img/note5.png"));
+                } else if(level === 6){
+                    availableNotes.push(new Note(x, y, "./img/note8.png"));
+                } else if(level === 7){
+                    availableNotes.push(new Note(x, y, "./img/note7.png"));
+                } 
             }
         }
     };
@@ -172,6 +189,7 @@ function updateCanvas() {
                 caughtNotes++;
                 currentNote = null;
                 availableNotes.splice(index, 1);
+                context.clearRect(note.x, note.y, note.width, note.height);
 
                 if (currentLevel === 1 && caughtNotes === 1) {
                     document.getElementById("game-board").style.display = "none";

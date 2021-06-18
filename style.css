@@ -252,10 +252,20 @@ html, body{
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    width: 70px;
+    width: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
   }
 
-  #button-level1{
+  .noteLevel1 img{
+    width: 50px;
+  }
+
+  .button-level{
     font-size: 30px;
     background-color: #ED5049;
     color: #fff;
@@ -273,7 +283,7 @@ html, body{
     z-index: 0; 
   }
 
-  #button-level1:hover{
+  .button-level:hover{
     background-color: #ED5049;
     color: #fff;
     box-shadow: 0 0 5px #ED5049, 0 0 20px #ED5049, 0 0 40px #ED5049;

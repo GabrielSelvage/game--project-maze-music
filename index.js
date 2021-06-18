@@ -4,6 +4,11 @@ const context = mazeCanvas.getContext("2d");
 document.getElementById("game-final").style.display = "none";
 document.getElementById("game-board").style.display = "none";
 document.getElementById("game-level1").style.display = "none";
+document.getElementById("game-level2").style.display = "none";
+document.getElementById("game-level3").style.display = "none";
+document.getElementById("game-level4").style.display = "none";
+document.getElementById("game-level5").style.display = "none";
+document.getElementById("game-level6").style.display = "none";
 document.getElementById("start-button").onclick = () => {
     document.getElementById("game-board").style.display = "block";
     audio.play();
@@ -25,7 +30,7 @@ const buttonPlay = new Image();
 let score2 = 0;
 document.querySelector("#score").innerHTML = score2;
 let timer2 = 0;
-document.querySelector("#timer").innerHTML = timer2;
+//document.querySelector("#timer").innerHTML = timer2;
 let pagInit = document.getElementById("game-intro").style.display = "block";
 
 const audio = document.querySelector('audio');
@@ -55,7 +60,7 @@ let availableNotes = [];
 let currentNote;
 
 function startGame() {
-    initTimer();
+    // initTimer();
     screenInitial.src = "./img/30105.jpg";
     buttonPlay.src = "./img/button.png"
     currentGame = new Game();
@@ -169,49 +174,71 @@ function updateCanvas() {
                 availableNotes.splice(index, 1);
 
                 if (currentLevel === 1 && caughtNotes === 1) {
-                    // document.getElementById("game-board").style.display = "none";
-                    // document.getElementById("game-level1").style.display = "block";
-                    initTimer();
+                    document.getElementById("game-board").style.display = "none";
+                    document.getElementById("game-level1").style.display = "block";
                     audio.pause();
                     audio1.play();
-                    reDesignCanvas = true;
-                    currentLevel++;
-                    caughtNotes = 0;
-                    walls = [];
-                    cancelAnimationFrame(animationId);
-                    availableNotes = [];
-                    initMaze(2);
-                    animationId = requestAnimationFrame(updateCanvas);
-                    document.querySelector(".level1").innerText = "Level 2";
-                    document.querySelector("#nextNote").src = "./img/noteReds.png";
-                    score2 += 10;
-                    document.querySelector("#score").innerHTML = score2;
-                    reDesignCanvas = false;
-                    currentGame.player.x = 30;
-                    currentGame.player.y = 30;
+                    document.getElementById("button-level1").onclick = () => {
+                        document.getElementById("game-board").style.display = "block";
+                        document.getElementById("game-level1").style.display = "none";
+                        audio.play();
+                        // initTimer();
+                        reDesignCanvas = true;
+                        currentLevel++;
+                        caughtNotes = 0;
+                        walls = [];
+                        cancelAnimationFrame(animationId);
+                        availableNotes = [];
+                        initMaze(2);
+                        animationId = requestAnimationFrame(updateCanvas);
+                        document.querySelector(".level1").innerText = "Level 2";
+                        document.querySelector("#nextNote").src = "./img/noteReds.png";
+                        score2 += 10;
+                        document.querySelector("#score").innerHTML = score2;
+                        reDesignCanvas = false;
+                        currentGame.player.x = 30;
+                        currentGame.player.y = 30;   
+                    }
                 }
                 if (currentLevel === 2 && caughtNotes === 2) {
-                    initTimer();
+                    document.getElementById("game-board").style.display = "none";
+                    document.getElementById("game-level2").style.display = "block";
+                    audio.pause();
+                    audio1.pause();
                     audio2.play();
-                    reDesignCanvas = true;
-                    currentLevel++;
-                    caughtNotes = 0;
-                    walls = [];
-                    cancelAnimationFrame(animationId);
-                    availableNotes = [];
-                    initMaze(3);
-                    animationId = requestAnimationFrame(updateCanvas);
-                    document.querySelector(".level1").innerText = "Level 3";
-                    document.querySelector("#nextNote2").src = "./img/noteYellowS.png";
-                    score2 += 10;
-                    document.querySelector("#score").innerHTML = score2;
-                    reDesignCanvas = false;
-                    currentGame.player.x = 30;
-                    currentGame.player.y = 30;
+                    document.getElementById("button-level2").onclick = () => {
+                        document.getElementById("game-board").style.display = "block";
+                        document.getElementById("game-level2").style.display = "none";
+                        audio.play();
+                        // initTimer();
+                        reDesignCanvas = true;
+                        currentLevel++;
+                        caughtNotes = 0;
+                        walls = [];
+                        cancelAnimationFrame(animationId);
+                        availableNotes = [];
+                        initMaze(3);
+                        animationId = requestAnimationFrame(updateCanvas);
+                        document.querySelector(".level1").innerText = "Level 3";
+                        document.querySelector("#nextNote2").src = "./img/noteYellowS.png";
+                        score2 += 10;
+                        document.querySelector("#score").innerHTML = score2;
+                        reDesignCanvas = false;
+                        currentGame.player.x = 30;
+                        currentGame.player.y = 30;
+                    }
                 }
                 if (currentLevel === 3 && caughtNotes === 3) {
-                    initTimer();
+                    document.getElementById("game-board").style.display = "none";
+                    document.getElementById("game-level3").style.display = "block";
+                    audio.pause();
+                    audio2.pause();
                     audio3.play();
+                    document.getElementById("button-level3").onclick = () => {
+                    document.getElementById("game-board").style.display = "block";
+                    document.getElementById("game-level3").style.display = "none";
+                    audio.play();
+                    // initTimer();
                     reDesignCanvas = true;
                     currentLevel++;
                     caughtNotes = 0;
@@ -227,9 +254,19 @@ function updateCanvas() {
                     currentGame.player.x = 30;
                     currentGame.player.y = 30;
                 }
+            }
+
                 if (currentLevel === 4 && caughtNotes === 4) {
-                    initTimer();
+                    document.getElementById("game-board").style.display = "none";
+                    document.getElementById("game-level4").style.display = "block";
+                    audio.pause();
+                    audio3.pause();
                     audio4.play();
+                    document.getElementById("button-level4").onclick = () => {
+                    document.getElementById("game-board").style.display = "block";
+                    document.getElementById("game-level4").style.display = "none";
+                    audio.play();
+                    // initTimer();
                     reDesignCanvas = true;
                     currentLevel++;
                     caughtNotes = 0;
@@ -245,9 +282,18 @@ function updateCanvas() {
                     currentGame.player.x = 30;
                     currentGame.player.y = 30;
                 }
+            }
                 if (currentLevel === 5 && caughtNotes === 5) {
-                    initTimer();
+                    document.getElementById("game-board").style.display = "none";
+                    document.getElementById("game-level5").style.display = "block";
+                    audio.pause();
+                    audio4.pause();
                     audio5.play();
+                    document.getElementById("button-level5").onclick = () => {
+                    document.getElementById("game-board").style.display = "block";
+                    document.getElementById("game-level5").style.display = "none";
+                    audio.play();
+                    // initTimer();
                     reDesignCanvas = true;
                     currentLevel++;
                     caughtNotes = 0;
@@ -256,16 +302,25 @@ function updateCanvas() {
                     initMaze(6);
                     animationId = requestAnimationFrame(updateCanvas);
                     document.querySelector(".level1").innerText = "Level 6";
-                    document.querySelector("#nextNote5").src = "./img/noteBlueSS.png";
+                    document.querySelector("#nextNote5").src = "./img/notePinkS.png";
                     score2 += 10;
                     document.querySelector("#score").innerHTML = score2;
                     reDesignCanvas = false;
                     currentGame.player.x = 30;
                     currentGame.player.y = 30;
                 }
+            }
                 if (currentLevel === 6 && caughtNotes === 6) {
-                    initTimer();
+                    document.getElementById("game-board").style.display = "none";
+                    document.getElementById("game-level6").style.display = "block";
+                    audio.pause();
+                    audio5.pause();
                     audio6.play();
+                    document.getElementById("button-level6").onclick = () => {
+                    document.getElementById("game-board").style.display = "block";
+                    document.getElementById("game-level6").style.display = "none";
+                    audio.play();
+                    // initTimer();
                     reDesignCanvas = true;
                     currentLevel++;
                     caughtNotes = 0;
@@ -281,9 +336,11 @@ function updateCanvas() {
                     currentGame.player.x = 30;
                     currentGame.player.y = 30;
                 }
+            }
                 if (currentLevel === 7 && caughtNotes === 7) {
                     audio.pause();
                     audio8.play();
+                    final.play();
                     document.getElementById("game-board").style.display = "none";
                     document.getElementById("game-final").style.display = "block";
 
@@ -310,29 +367,29 @@ function drawWalls() {
 
 //TIMER
 
-function startTimer(duration, display) {
-    let timer = duration, minutes, seconds;
-    clearInterval(interval);
-    interval = setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+// function startTimer(duration, display) {
+//     let timer = duration, minutes, seconds;
+//     clearInterval(interval);
+//     interval = setInterval(function () {
+//         minutes = parseInt(timer / 60, 10);
+//         seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+//         minutes = minutes < 10 ? "0" + minutes : minutes;
+//         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
+//         display.textContent = minutes + ":" + seconds;
 
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-}
+//         if (--timer < 0) {
+//             timer = duration;
+//         }
+//     }, 1000);
+// }
 
-function initTimer() {
-    var minutes = 60;
-    display = document.querySelector('#timer');
-    startTimer(minutes, display);
-}
+// function initTimer() {
+//     var minutes = 60;
+//     display = document.querySelector('#timer');
+//     startTimer(minutes, display);
+// }
 
 
 
